@@ -151,7 +151,7 @@ def main():
     # st.markdown("---")
 
     # Create and display PnL matrix
-    st.subheader(f"💰 Total PnL Matrix - {selected_years}")
+    st.subheader(f"💰 Total PnL Matrix - {int(selected_years)}")
     # st.markdown("**Rows: ST1 Parameters | Columns: ST2 Parameters**")
     
     pnl_matrix = create_pnl_matrix(filtered_df)
