@@ -143,7 +143,12 @@ def main():
     col1, col2, col3, col4 = st.columns(4)
 
     # Create and display PnL matrix
-    st.subheader(f"💰 Total PnL Matrix - {selected_years}")
+    
+    # Just join the years with commas
+    year_display = ", ".join(map(str, selected_years))
+    st.subheader(f"💰 Total PnL Matrix - [{year_display}]")
+    
+    # st.subheader(f"💰 Total PnL Matrix - {selected_years}")
     # st.markdown("**Rows: ST1 Parameters | Columns: ST2 Parameters**")
     
     pnl_matrix = create_pnl_matrix(filtered_df)
