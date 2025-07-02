@@ -120,7 +120,9 @@ def main():
     st.sidebar.header(" Filters")
 
     # Year Filter
-    available_years = sorted(df['year'].unique())
+    available_years = sorted([int(year) for year in df['year'].unique()])
+    # available_years = sorted(df['year'].unique())
+    
     selected_years = st.sidebar.multiselect(
         "Select Year(s)",
         options=available_years,
@@ -139,16 +141,6 @@ def main():
     
     # Display Summary Statistics
     col1, col2, col3, col4 = st.columns(4)
-
-    # with col1:
-    #     total_pnl = filtered_df['PnL'].sum()
-    #     st.metric("Total PnL", f"{total_pnl:.0f}")
-
-    # with col2:
-    #     pnl_pct = filtered_df['PnL_Pct'].sum()
-    #     st.metric("PnL %", f"{pnl_pct:.0f}")
-
-    # st.markdown("---")
 
     # Create and display PnL matrix
     st.subheader(f"💰 Total PnL Matrix - {selected_years}")
