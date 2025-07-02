@@ -7,7 +7,8 @@ import plotly.graph_objects as go
 
 from plotly.subplots import make_subplots
 
-dbPath = r"G:\My Drive\Octanom\Supertrend\2_supertrends_combinations.db"
+# dbPath = r"G:\My Drive\Octanom\Supertrend\2_supertrends_combinations.db"
+dbPath = "2_supertrends_combinations.db"
 table_name = "backtest_results"
 startDate = '2023-01-01'
 
