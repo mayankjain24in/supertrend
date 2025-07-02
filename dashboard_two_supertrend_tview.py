@@ -37,7 +37,8 @@ st.set_page_config(page_title="Two SuperTrend Signal PnL", layout="wide")
 @st.cache_data
 def load_data():
     db_df = read_all_from_db('backtest_results', dbPath)
-    db_df['entry_time'] = pd.to_datetime(db_df['entry_time'], format='%H:%M:%S.%f').dt.time
+    # db_df['entry_time'] = pd.to_datetime(db_df['entry_time'], format='%H:%M:%S.%f').dt.time
+    db_df['entry_time'] = pd.to_datetime(db_df['entry_time'], errors='coerce').dt.time
     db_df['exit1_time'] = pd.to_datetime(db_df['exit1_time'], format='%H:%M:%S.%f').dt.time
     db_df['exit2_time'] = pd.to_datetime(db_df['exit2_time'], format='%H:%M:%S.%f').dt.time
 
